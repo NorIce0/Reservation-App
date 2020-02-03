@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title={room.Name} class="room-tile">
+        <div class="slds-p-horizontal_small">
+            <div class="slds-media_body">
+                <p class="slds-m-bottom_xx-small">Maximum Capacity: {room.MaximumCapacity__c}</p>
+                <p class="slds-m-bottom_xx-small" if:true={room.HasAProjector__c}><lightning-badge label="Has a projector."></lightning-badge></p>
+            </div>
+        </div>
+    </lightning-card>
+</template>

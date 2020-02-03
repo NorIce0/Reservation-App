@@ -1,0 +1,28 @@
+<template>
+      
+   <div class="slds-m-around_medium">
+      <lightning-card title="Create a reservation" icon-name="standard:record">
+         <lightning-record-edit-form object-api-name={reservationObject} onerror={handleError} onsuccess={handleReservationCreated}>
+            <lightning-messages>{errorMessage}</lightning-messages>
+
+            <div class="slds-m-around_medium">
+               <div class="slds-m-top_medium">
+                  <lightning-input-field type="search" field-name={assignedRoomField}></lightning-input-field>
+                  <lightning-input-field type="datetime" field-name={initialDatetimeField}></lightning-input-field>
+                  <lightning-input-field type="datetime" field-name={endDatetimeField}></lightning-input-field>
+               </div>
+               <div class="slds-grid">
+                  <div class="slds-col slds-size_1-of-3">
+                     <lightning-button label="Cancel" onclick={handleReset}></lightning-button>
+                  </div>
+                  <div class="slds-col slds-size_2-of-3">
+                     <lightning-button type="submit" variant="brand" label="Create Reservation" class="slds-aling_right"></lightning-button>
+                  </div>
+               </div>
+            </div>
+            
+         </lightning-record-edit-form>
+      </lightning-card>
+   </div>
+   
+</template>
