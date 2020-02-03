@@ -3,6 +3,6 @@ import getRooms from '@salesforce/apex/RoomController.getRooms';
 
 export default class RoomList extends LightningElement {
 
-    @wire(getRooms)rooms;
+    @wire( getRooms ) rooms;
 
 }
