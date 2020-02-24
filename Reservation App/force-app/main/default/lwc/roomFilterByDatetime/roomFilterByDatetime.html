@@ -1,3 +1,11 @@
 <template>
-    
+    <lightning-card title="Filter available rooms by date/time">
+        <div class="slds-m-around_medium slds-m-top_medium">
+            <lightning-input type='datetime' label='Enter the initial date/time' onchange={handleInitialTimeChange}></lightning-input>
+            <lightning-input type='datetime' label='Enter the end date/time' onchange={handleEndTimeChange}></lightning-input>
+        </div>
+        <div>
+            <c-filtered-room-list initial-datetime={initialTime} end-datetime={endTime} ></c-filtered-room-list>
+        </div>
+    </lightning-card>
 </template>

@@ -1,0 +1,27 @@
+<template>
+    <lightning-tile class='reservation-tile' title={reservation.Name} label={reservation.Name}  onclick={handleSelect}>
+        <lightning-layout class='slds-grid slds-m-around_medium'>
+            <lightning-layout-item class='slds-col slds-size_1-of-3'>
+                <p>Initial Datetime: </p>
+                <lightning-formatted-date-time
+                value={reservation.InitialTime__c}
+                >
+                </lightning-formatted-date-time>
+            </lightning-layout-item>
+            <lightning-layout-item class='slds-col slds-size_1-of-3'>
+                <p>End Datetime: </p>
+                <lightning-formatted-date-time
+                value={reservation.EndTime__c}
+                >
+                </lightning-formatted-date-time>
+            </lightning-layout-item>
+            <lightning-layout-item class='slds-col slds-size_1-of-3'>
+                <p>Assigned Room: </p>
+                <lightning-formatted-text
+                value={assignedRoomName.data}
+                >
+                </lightning-formatted-text>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-tile>
+</template>

@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Create Reservation" class="slds-m-around_medium" >
+        <div class="slds-m-around_medium">
+            <lightning-input type="datetime" name='initialDT' onchange={handleDatetimeChange} value={initialDTProperty}></lightning-input>
+            <lightning-input type="datetime" name='endDT' onchange={handleDatetimeChange} value={endDTProperty}></lightning-input>
+        
+        </div>
+        <div class="slds-m-around_medium">
+            <c-filtered-room-list initial-datetime={initialDTProperty} end-datetime={endDTProperty} onrefreshed={handleRefresh} onselectedroom={handleSelectedRoom} refresh={refresh}></c-filtered-room-list>
+        </div>
+        <div class="slds-grid slds-m-around_medium">
+            <div class="slds-col slds-size_1-of-3">
+                <lightning-button label="Cancel" onclick={handleReset}></lightning-button>
+            </div>
+            <div class="slds-col slds-size_2-of-3">
+                <lightning-button  label='Create' variant='brand' onclick={createReservation}></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

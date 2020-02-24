@@ -1,10 +1,13 @@
 <template>
-    <lightning-card title={room.Name} class="room-tile">
-        <div class="slds-p-horizontal_small">
-            <div class="slds-media_body">
-                <p class="slds-m-bottom_xx-small">Maximum Capacity: {room.MaximumCapacity__c}</p>
-                <p class="slds-m-bottom_xx-small" if:true={room.HasAProjector__c}><lightning-badge label="Has a projector."></lightning-badge></p>
-            </div>
-        </div>
-    </lightning-card>
+    <lightning-tile class='room-tile' title={room.Name} label={room.Name} onclick={handleSelect}>
+        <ul class="slds-list_horizontal slds-has-dividers_right">
+            <li class="slds-item">Maximum Capacity: {room.MaximumCapacity__c}</li>
+            <template if:true={room.HasAProjector__c}>
+                <li class="slds-item">Has a projector</li>
+            </template>
+            <template if:false={room.HasAProjector__c}>
+                <li class="slds-item">Don't has a projector</li>
+            </template>
+        </ul>
+    </lightning-tile>
 </template>
